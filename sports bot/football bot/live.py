@@ -52,9 +52,11 @@ def fetch_live_match():
         print("Statistics:")
         for stat in data.get("stats", []):
             print(stat)
+        return data
 
     except Exception as e:
         print(f"Error fetching live match data at {time.strftime('%H:%M:%S')}: {e}")
+        return {}
 
 def main():
     print(f"Starting live match polling every {INTERVAL} seconds...")
